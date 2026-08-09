@@ -16,4 +16,5 @@ Static HTML/CSS/JavaScript quiz for GitHub Pages.
 5. Save and open the generated Pages URL.
 
 The quiz is fully client-side and does not need a server or database.
+
 https://alexrahmanov.github.io/AME-M-Practice-exam/
