@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AME-M Practice Quiz</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <div><div class="eyebrow">Transport Canada • Category M</div><h1>AME-M Practice Quiz</h1></div>
+    <div class="header-actions">
+      <button id="homeTop" class="ghost-btn" type="button">Main Menu</button>
+      <button id="restartTop" class="ghost-btn" type="button">Restart</button>
+    </div>
+  </div>
+</header>
+<main class="container">
+  <section id="startScreen" class="card start-card">
+    <span class="badge">200 Questions</span>
+    <h2>Aircraft Maintenance Engineer — Category M</h2>
+    <p>Practice one question at a time. Select an answer to see immediately whether it is correct. If it is wrong, the correct answer and the explanation are shown before you continue.</p>
+    <ul><li>Instant answer feedback</li><li>Correct answer + rationale after an incorrect choice</li><li>Score, accuracy and progress tracking</li><li>Your position stays on the current question when you click Next</li></ul>
+
+    <div class="practice-settings" aria-label="Practice settings">
+      <label class="setting-field" for="questionCount">
+        <span>Questions</span>
+        <select id="questionCount">
+          <option value="all">All 200</option>
+          <option value="100">100</option>
+          <option value="50">50</option>
+          <option value="25">25</option>
+        </select>
+      </label>
+      <label class="check-setting"><input id="shuffleQuestions" type="checkbox" checked> <span>Shuffle questions</span></label>
+      <label class="check-setting"><input id="shuffleAnswers" type="checkbox"> <span>Shuffle answers</span></label>
+      <button id="startBtn" class="primary-btn" type="button">Start Quiz</button>
+    </div>
+  </section>
+
+  <section id="quizScreen" class="quiz-screen hidden" aria-live="polite">
+    <div class="card quiz-status-card">
+      <div class="status-grid">
+        <div class="status-item"><span class="status-label">Question</span><strong id="progressText">1 / 25</strong></div>
+        <div class="status-item"><span class="status-label">Score</span><strong id="scoreText">0 / 0</strong></div>
+        <div class="status-item"><span class="status-label">Accuracy</span><strong id="accuracyText">—</strong></div>
+      </div>
+    </div>
+    <div class="progress-bar" role="progressbar" aria-label="Quiz progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progressFill"></div></div>
+
+    <article id="questionCard" class="card question-card">
+      <div class="question-meta"><span id="questionNumber"></span></div>
+      <h2 id="questionText"></h2>
+      <div id="options" class="options"></div>
+      <div id="feedback" class="feedback hidden"></div>
+      <div class="actions"><button id="nextBtn" class="primary-btn" type="button" disabled>Next Question</button></div>
+    </article>
+  </section>
+
+  <section id="resultsScreen" class="card results-card hidden">
+    <span class="badge">Quiz Complete</span>
+    <h2>Practice Complete</h2>
+    <div id="finalScore" class="final-score"></div>
+    <p id="resultMessage"></p>
+    <button id="restartBtn" class="primary-btn" type="button">Practice Again</button>
+    <button id="settingsBtn" class="secondary-btn" type="button">Change Settings</button>
+  </section>
+</main>
+<footer>Built for personal AME-M practice • Questions and rationales are based on the uploaded practice PDF.</footer>
+<script src="questions.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
